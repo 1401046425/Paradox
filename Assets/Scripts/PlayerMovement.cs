@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private VariableJoystick InpuJoyStick;
     [SerializeField] private float m_Speed;
+    [SerializeField] private float TargetY;
+    [SerializeField] private float ScaleIncrement=0;
     [SerializeField][Range(0f,1f)] private  float m_SmoothTime=0.25f;
     [SerializeField] private string MoveAnimationXName,MoveAnimationYName;
      private SpriteRenderer m_SpriteRenderer;
@@ -16,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
 
     private DialogueRunner dialogueRunner;
+
+    private Transform m_Transform;
+    private Vector3 OriginPlayerSize;
 
 
     private Vector2 velocity;
@@ -26,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_Rigidbody2D.freezeRotation = true;
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        m_Transform = transform;
+        OriginPlayerSize = m_Transform.localScale;
 
     }
 
@@ -58,8 +65,18 @@ public class PlayerMovement : MonoBehaviour
 
         m_Animator.SetFloat(MoveAnimationXName,m_Rigidbody2D.velocity.x);
         m_Animator.SetFloat(MoveAnimationYName,m_Rigidbody2D.velocity.y);
+        SetScaleByY();
 
-
+    }
+    
+    private void SetScaleByY ()
+    {
+        var y_lenth = (m_Transform.position.y - TargetY);
+        if (m_Transform.localScale.y < 0.01f)
+        {
+            m_Transform.localScale=Vector3.one*0.01f;
+        }
+        m_Transform.localScale = OriginPlayerSize -(Vector3.one*y_lenth/ScaleIncrement);
     }
 
     // Start is called before the first frame update
