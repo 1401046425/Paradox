@@ -53,8 +53,12 @@ public class PlayerMovement : MonoBehaviour
         if (dialogueRunner.isDialogueRunning)
         {
             m_Rigidbody2D.velocity = Vector2.zero;
+
             if (InpuJoyStick.gameObject.activeInHierarchy)
+            {
+                InpuJoyStick.ResetJoystick();
                 InpuJoyStick.gameObject.SetActive(false);;
+            }
         }
         else
         {

@@ -2,42 +2,12 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Paradox.1553059780.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Paradox.945482273.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Easy Save 2" t="Include">
-          <e p="changelog.txt" t="Include" />
-          <e p="ES2Init.cs" t="Include" />
-          <e p="Examples" t="Include">
-            <e p="Creating an Automatic Save Structure" t="Include">
-              <e p="ES2UniqueID.cs" t="Include" />
-              <e p="UniqueGameLogic.cs" t="Include" />
-              <e p="UniqueObjectManager.cs" t="Include" />
-              <e p="UniqueSaveManager.cs" t="Include" />
-            </e>
-            <e p="Save and Load Prefabs Instantiated at Runtime" t="Include">
-              <e p="PrefabManager.cs" t="Include" />
-            </e>
-            <e p="Shared Assets" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="MyExampleScript.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Upload and Download a Texture" t="Include">
-              <e p="UploadDownloadTexture.cs" t="Include" />
-            </e>
-          </e>
-          <e p="README.txt" t="Include" />
-          <e p="Types" t="Include">
-            <e p="ES2_AudioClip.cs" t="Include" />
-            <e p="ES2_GameObject.cs" t="Include" />
-            <e p="ES2_RawTexture2D.cs" t="Include" />
-            <e p="ES2_Sprite.cs" t="Include" />
-          </e>
-        </e>
         <e p="Font" t="Include">
           <e p="chinese.txt" t="Include" />
         </e>
@@ -59,6 +29,36 @@
             </e>
           </e>
           <e p="Easy Save 2" t="Include">
+            <e p="Easy Save 2" t="Include">
+              <e p="changelog.txt" t="Include" />
+              <e p="ES2Init.cs" t="Include" />
+              <e p="Examples" t="Include">
+                <e p="Creating an Automatic Save Structure" t="Include">
+                  <e p="ES2UniqueID.cs" t="Include" />
+                  <e p="UniqueGameLogic.cs" t="Include" />
+                  <e p="UniqueObjectManager.cs" t="Include" />
+                  <e p="UniqueSaveManager.cs" t="Include" />
+                </e>
+                <e p="Save and Load Prefabs Instantiated at Runtime" t="Include">
+                  <e p="PrefabManager.cs" t="Include" />
+                </e>
+                <e p="Shared Assets" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="MyExampleScript.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Upload and Download a Texture" t="Include">
+                  <e p="UploadDownloadTexture.cs" t="Include" />
+                </e>
+              </e>
+              <e p="README.txt" t="Include" />
+              <e p="Types" t="Include">
+                <e p="ES2_AudioClip.cs" t="Include" />
+                <e p="ES2_GameObject.cs" t="Include" />
+                <e p="ES2_RawTexture2D.cs" t="Include" />
+                <e p="ES2_Sprite.cs" t="Include" />
+              </e>
+            </e>
             <e p="Editor" t="Include">
               <e p="AutoSave" t="Include">
                 <e p="ES2EditorAutoSaveHierarchy.cs" t="Include" />
@@ -447,16 +447,18 @@
           </e>
           <e p="inventorySystem" t="Include">
             <e p="Scripts" t="Include">
+              <e p="CheckItem.cs" t="Include" />
               <e p="Editor" t="Include">
-                <e p="InventoryTool.cs" t="Include" />
+                <e p="InventoryEditor.cs" t="Include" />
                 <e p="ItemDataInspector.cs" t="Include" />
               </e>
               <e p="Inventory.cs" t="Include" />
+              <e p="InventoryItem.cs" t="Include" />
               <e p="InventorySaveData.cs" t="Include" />
               <e p="InventoryType.cs" t="Include" />
               <e p="InventoryView.cs" t="Include" />
               <e p="Item.cs" t="Include" />
-              <e p="ItemData.cs" t="Include" />
+              <e p="ItemControlHelper.cs" t="Include" />
               <e p="ItemGridView.cs" t="Include" />
               <e p="ItemInfoView.cs" t="Include" />
               <e p="ItemType.cs" t="Include" />
@@ -663,18 +665,34 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AutoHider.cs" t="Include" />
           <e p="DialogueCommandChecker.cs" t="Include" />
           <e p="DialogueStateChecker.cs" t="Include" />
           <e p="DialogueUI.cs" t="Include" />
           <e p="EnableEvent.cs" t="Include" />
+          <e p="MsgShower.cs" t="Include" />
           <e p="OnInitEvent.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="StoryManager.cs" t="Include" />
           <e p="StoryTrigger.cs" t="Include" />
           <e p="TouchEvent.cs" t="Include" />
           <e p="Trigger.cs" t="Include" />
+          <e p="分析仪" t="Include">
+            <e p="Analyzer.cs" t="Include" />
+          </e>
+          <e p="显微镜模块" t="Include">
+            <e p="BluePoint.cs" t="Include" />
+            <e p="Limit.cs" t="Include" />
+            <e p="Microscope.cs" t="Include" />
+          </e>
+          <e p="消息模块" t="Include">
+            <e p="MeassageManager.cs" t="Include" />
+            <e p="MeassageView.cs" t="Include" />
+            <e p="PickItemMsgTrigger.cs" t="Include" />
+          </e>
         </e>
         <e p="Text" t="Include">
+          <e p="智人实验报告分析完成.txt" t="Include" />
           <e p="科学家进入实验室.yarn.txt" t="Include" />
         </e>
       </e>

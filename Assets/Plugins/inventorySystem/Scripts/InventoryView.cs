@@ -10,8 +10,8 @@ public class InventoryView : MonoBehaviour
     [SerializeField] private List<ItemGridView> GridViews=new List<ItemGridView>();
   [SerializeField] private CanvasGroup m_CanvasGroup;
   [SerializeField] private float CanvasUpdateSpeed=1;
-  [SerializeField] private Vector2 TargetPos;
-  [SerializeField] private Vector2 OriginPos;
+  [SerializeField] private Transform TargetPos;
+  [SerializeField] private Transform OriginPos;
   [SerializeField] private bool AutoHideOnStart;
   public float TransitionSpeed;
   private ItemSaveData NowSlectData;
@@ -59,17 +59,21 @@ public class InventoryView : MonoBehaviour
         m_Inventory.OnItemSave+=RefreshAllInventoryView;
         m_Inventory.OnItemInit+= RefreshAllInventoryView;
 
-        
+
   }
+
+
+
+
   [ContextMenu("设置目标移动坐标")]
   private void SetTargetPos()
   {
-      TargetPos = transform.position;
+      TargetPos.position = transform.position;
   }
   [ContextMenu("设置初始坐标")]
   private void SetOriginPos()
   {
-      OriginPos = transform.position;
+      OriginPos.position = transform.position;
   }
 
   private Coroutine MoveCoroutine;
@@ -81,7 +85,7 @@ public class InventoryView : MonoBehaviour
       ShowCoroutine= StartCoroutine(ShowView(m_ItemInfoView.GetComponent<CanvasGroup>()));
       if(MoveCoroutine!=null)
           StopCoroutine(MoveCoroutine);
-      MoveCoroutine= StartCoroutine(Move(TargetPos));
+      MoveCoroutine= StartCoroutine(Move(TargetPos.position));
   }
   public void CloseItemInfoView()
   {
@@ -90,7 +94,7 @@ public class InventoryView : MonoBehaviour
       ShowCoroutine= StartCoroutine(CloseView(m_ItemInfoView.GetComponent<CanvasGroup>()));
       if(MoveCoroutine!=null)
           StopCoroutine(MoveCoroutine);
-      MoveCoroutine= StartCoroutine(Move(OriginPos));
+      MoveCoroutine= StartCoroutine(Move(OriginPos.position));
   }
   IEnumerator Move(Vector2 Pos)
   {
@@ -103,14 +107,20 @@ public class InventoryView : MonoBehaviour
   }
   private void RefreshAllInventoryView(InventorySaveData arg0)
     {
+        foreach (var VARIABLE in GridViews)
+        {
+            VARIABLE.ClearItemIcon();
+        }
         for (int i = 0; i < arg0.Datas.Count; i++)
         {
+            GridViews[i].ClearItemIcon();
             GridViews[i].DrawItemIcon(arg0.Datas[i]);
         }
     }
-
-    public void ShowItemView()
+  public void ShowItemView()
     {
+        transform.position = OriginPos.position;
+        RefreshAllInventoryView(m_Inventory.SaveData);
         StartCoroutine(ShowView(m_CanvasGroup));
     }
 
@@ -143,8 +153,8 @@ public class InventoryView : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color=Color.magenta;
-        Gizmos.DrawWireSphere(TargetPos,20f);
+        Gizmos.DrawWireSphere(TargetPos.position,20f);
         Gizmos.color=Color.green;
-        Gizmos.DrawWireSphere(OriginPos,20f);
+        Gizmos.DrawWireSphere(OriginPos.position,20f);
     }
 }

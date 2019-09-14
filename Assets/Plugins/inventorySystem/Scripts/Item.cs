@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Item : MonoBehaviour
 {
-    public ItemData Data;
+    public InventoryItem Data;
     private Inventory TargetInventory;
    [HideInInspector] public SpriteRenderer Item_SpriteRenderer;
     // Start is called before the first frame update
@@ -19,7 +19,17 @@ public class Item : MonoBehaviour
         }
         if(!TargetInventory)
             Debug.LogError("警告未找到仓库管理器");
+
+
     }
+
+    private void OnEnable()
+    {
+        if (Data.JustCanPickUpOnce)
+            if (TargetInventory.SaveData.OnceItemSaveData.Contains(Data))
+                Destroy(this.gameObject);
+    }
+
     void Start()
     {
         if (!Data)
@@ -39,6 +49,8 @@ public class Item : MonoBehaviour
        if(TargetInventory.DepositItem(Data))
            Destroy(gameObject);
     }
+
+
 
     // Update is called once per frame
     void Update()

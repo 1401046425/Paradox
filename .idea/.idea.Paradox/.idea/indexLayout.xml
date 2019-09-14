@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
-    <explicitIncludes>
+    <attachedFolders>
       <Path>../../../../../../Users/apple/Library/Unity/cache/packages/packages.unity.com/com.unity.timeline@1.1.0</Path>
+    </attachedFolders>
+    <explicitIncludes>
       <Path>Library/PackageCache/com.unity.2d.animation@2.2.0-preview.4</Path>
       <Path>Library/PackageCache/com.unity.2d.common@1.2.0-preview.1</Path>
       <Path>Library/PackageCache/com.unity.2d.psdimporter@1.2.0-preview.3</Path>

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class ItemGridView : Button
    [SerializeField] private TextMeshProUGUI CountText;
    [SerializeField] private UnityEvent OnSelect;
    private ItemSaveData KeepData;
+   public ItemSaveData _keepdata
+   {
+       get { return KeepData; }
+   }
+
    [HideInInspector]
    public InventoryView _InventoryView;
 
@@ -27,7 +33,16 @@ public class ItemGridView : Button
    {
        KeepData = data;
         ItemSprite.sprite = data.Data.ItemImage;
+        ItemSprite.SetNativeSize();
         CountText.text = data.Count.ToString();
         ItemSprite.color=Color.white;
+   }
+
+   public void ClearItemIcon()
+   {
+       KeepData = null;
+       ItemSprite.sprite = null;
+       CountText.text=String.Empty;
+       ItemSprite.color=Color.clear;
    }
 }
