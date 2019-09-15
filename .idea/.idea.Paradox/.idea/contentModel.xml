@@ -670,9 +670,15 @@
           <e p="DialogueStateChecker.cs" t="Include" />
           <e p="DialogueUI.cs" t="Include" />
           <e p="EnableEvent.cs" t="Include" />
+          <e p="LayerCheck.cs" t="Include" />
+          <e p="Map" t="Include">
+            <e p="MapManager.cs" t="Include" />
+            <e p="MapPoint.cs" t="Include" />
+          </e>
           <e p="MsgShower.cs" t="Include" />
           <e p="OnInitEvent.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="Shadow.cs" t="Include" />
           <e p="StoryManager.cs" t="Include" />
           <e p="StoryTrigger.cs" t="Include" />
           <e p="TouchEvent.cs" t="Include" />
@@ -693,6 +699,7 @@
         </e>
         <e p="Text" t="Include">
           <e p="智人实验报告分析完成.txt" t="Include" />
+          <e p="汇报实验结果给主管.txt" t="Include" />
           <e p="科学家进入实验室.yarn.txt" t="Include" />
         </e>
       </e>

@@ -14,7 +14,7 @@ public class Microscope : MonoBehaviour
     public void AddBluePoint()
     {
         Point++;
-        PointText.text = Point.ToString();
+        PointText.text = Point+"/12";
         if (Point >= TargetBLuePoint)
             OnMicroscopeFinish?.Invoke();
     }

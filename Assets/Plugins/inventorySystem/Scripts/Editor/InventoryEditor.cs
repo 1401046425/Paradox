@@ -30,8 +30,8 @@ public class InventoryEditor : EditorWindow
     {
         if (inventory!=null)
         {
-            Foldouttype = new Boolean[inventory.MaxInventorySize];
-            Edits=new Boolean[inventory.MaxInventorySize];
+            Foldouttype = new Boolean[inventory.MaxInventorySize+1];
+            Edits=new Boolean[inventory.MaxInventorySize+1];
             OnceItemEdits=new bool[inventory.SaveData.OnceItemSaveData.Count+1];
         }
     }

@@ -1,18 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemControlHelper : MonoBehaviour
 {
+    private Inventory Master;
+
+    private void Awake()
+    {
+        Master = FindObjectOfType<Inventory>();
+    }
 
     public void DepositItem(InventoryItem item)
     {
-        FindObjectOfType<Inventory>().DepositItem(item);
+        Master.DepositItem(item);
     }
 
     public void DeleteItem(InventoryItem item)
     {
-        FindObjectOfType<Inventory>().DeleteItem(item);
+        Master.DeleteItem(item);
     }
 
 }

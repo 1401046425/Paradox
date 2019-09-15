@@ -26,10 +26,16 @@ public class CheckItem : MonoBehaviour
 
     public void CheckHasItem()
     {
+        if(CheckItemData.Count<=0)
+            return;
+        if(CheckItemData==null)
+            return;
         var result = false;
-        foreach (var VARIABLE in CheckItemData)
+        for (int i = 0; i < CheckItemData.Count; i++)
         {
-            result = Master.Contains(VARIABLE);
+            result = Master.Contains(CheckItemData[i]);
+            if(result==false)
+                break;
         }
         if(result)
             HasItem?.Invoke();
